@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Científica Moderna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app">
+        <header class="app__header">
+            <h1>Calculadora Científica</h1>
+            <div class="mode-toggle">
+                <button id="degBtn" class="toggle active" type="button">DEG</button>
+                <button id="radBtn" class="toggle" type="button">RAD</button>
+            </div>
+        </header>
+
+        <main class="app__main">
+            <section class="calculator" aria-label="Calculadora">
+                <div class="display" id="display">
+                    <div class="display__expr" id="expr"></div>
+                    <div class="display__result" id="result">0</div>
+                </div>
+
+                <div class="keys">
+                    <!-- Fila 1 -->
+                    <button class="key key--func" data-action="clear">C</button>
+                    <button class="key key--func" data-action="backspace">⌫</button>
+                    <button class="key key--func" data-value="(">(</button>
+                    <button class="key key--func" data-value=")">)</button>
+
+                    <!-- Fila 2 -->
+                    <button class="key key--sci" data-value="sin(">sin</button>
+                    <button class="key key--sci" data-value="cos(">cos</button>
+                    <button class="key key--sci" data-value="tan(">tan</button>
+                    <button class="key key--op" data-value="/">÷</button>
+
+                    <!-- Fila 3 -->
+                    <button class="key key--sci" data-value="sqrt(">√</button>
+                    <button class="key key--sci" data-value="log(">log</button>
+                    <button class="key key--sci" data-value="ln(">ln</button>
+                    <button class="key key--op" data-value="*">×</button>
+
+                    <!-- Fila 4 -->
+                    <button class="key key--sci" data-value="pi">π</button>
+                    <button class="key key--sci" data-value="e">e</button>
+                    <button class="key key--sci" data-value="^">x^y</button>
+                    <button class="key key--op" data-value="-">−</button>
+
+                    <!-- Fila 5 -->
+                    <button class="key" data-value="7">7</button>
+                    <button class="key" data-value="8">8</button>
+                    <button class="key" data-value="9">9</button>
+                    <button class="key key--op" data-value="+">+</button>
+
+                    <!-- Fila 6 -->
+                    <button class="key" data-value="4">4</button>
+                    <button class="key" data-value="5">5</button>
+                    <button class="key" data-value="6">6</button>
+                    <button class="key key--op" data-value="%">%</button>
+
+                    <!-- Fila 7 -->
+                    <button class="key" data-value="1">1</button>
+                    <button class="key" data-value="2">2</button>
+                    <button class="key" data-value="3">3</button>
+                    <button class="key key--eq" data-action="equals">=</button>
+
+                    <!-- Fila 8 -->
+                    <button class="key key--wide" data-value="0">0</button>
+                    <button class="key" data-value=".">.</button>
+                    <button class="key key--sci" data-value="factorial(">n!</button>
+                </div>
+            </section>
+
+            <aside class="history" aria-label="Historial de cálculos">
+                <div class="history__header">
+                    <h2>Historial</h2>
+                    <button id="clearHistory" class="history__clear" type="button">Limpiar</button>
+                </div>
+                <ul class="history__list" id="historyList"></ul>
+                <p class="history__empty" id="historyEmpty">Sin cálculos recientes.</p>
+            </aside>
+        </main>
+
+        <footer class="app__footer">
+            <span>Calculadora Científica Moderna · Dark Mode</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
